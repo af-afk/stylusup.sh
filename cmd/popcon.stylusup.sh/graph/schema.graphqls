@@ -1,0 +1,15 @@
+
+type Popularity {
+  lang: String!
+  os: String!
+  arch: String!
+  instances: Int!
+}
+
+type Query {
+  popularity: [Popularity!]!
+}
+
+type Mutation {
+  register(arch: String!, lang: String!, os: String!): Boolean
+}
