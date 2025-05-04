@@ -57,9 +57,7 @@ check_has_rust() {
 if [ -z "$STYLUS_POPCON_OFF" ]; then
 	log "This installer will record the language, the os, and the architecture to
 https://popcon.stylusup.sh. To disable this functionality, control-c now, and set
-STYLUS_POPCON_OFF to anything. Or press enter to continue. If this is non-interactive,
-this will proceed as-is."
-	head -n1 /dev/stdin
+STYLUS_POPCON_OFF to anything."
 	report_popcon &
 fi
 
