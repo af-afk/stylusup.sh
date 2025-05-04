@@ -4,14 +4,13 @@
 
 # 1. Ask the user how much reporting they're comfortable with, and prompt them to simply
 # press enter if they're okay with this script reporting the language spoken on their
-# computer, their arhcitecture, and their operating system. At the end of this script, it
+# computer, their architecture, and their operating system. At the end of this script, it
 # will report whether the installation was a success. This will form the basis of a
 # Popularity Contest, which is accessible here: https://popcon.stylusup.sh. The rest of the
 # repository hosted at https://github.com/af-afk/stylusup.sh contains the webapp which
 # simply renders a graph using Stellate served from Postgres on a micro ec2 instance,
 # intermediated by Cloudflare. IP addresses collected are the HMAC'd form of the
-# architecture, language, and operating system details. It won't allow someone to insert
-# twice, as a rudimentary way of preventing someone from slamming more than once.
+# architecture, language, and operating system details.
 
 # 2. Check if Rust is installed. If it isn't, then it will use Rustup to make an
 # installation. It'll check the success of that installation.
@@ -33,13 +32,33 @@ die() {
 	exit 1
 }
 
-if ! which curl; then
+if ! which curl >/dev/null; then
 	# TODO: install this for users too.
 	die "curl is needed for installation."
 fi
 
+if ! which cc >/dev/null; then
+	# TODO install for users
+	die "cc is needed for installation."
+fi
+
+if ! which pkg-config >/dev/null; then
+	# TODO install for users
+	die "pkg-config is needed for installation."
+fi
+
+if ! pkg-config libssl >/dev/null; then
+	# TODO install for users
+	die "libssl-dev is needed for installation."
+fi
+
+if ! which git >/dev/null; then
+	# TODO install for users
+	die "git is needed for installation."
+fi
+
 if [ "$os" = "Linux" ]; then
-	source /etc/os-release
+	. /etc/os-release
 	distro="-$NAME"
 fi
 
@@ -58,6 +77,8 @@ if [ -z "$STYLUS_POPCON_OFF" ]; then
 	log "This installer will record the language, the os, and the architecture to
 https://popcon.stylusup.sh. To disable this functionality, control-c now, and set
 STYLUS_POPCON_OFF to anything."
+	log "Press enter to continue."
+	head -n 1 /dev/stdin >/dev/null
 	report_popcon &
 fi
 
@@ -66,7 +87,7 @@ if ! check_has_rust; then
 	# Use the Rust installer with the stable toolchain and no interactivity.
 	curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- --default-toolchain stable -y
 	# We need to get this into our PATH.
-	source ~/.cargo/env
+	. ~/.cargo/env
 fi
 
 if ! rustup target list | grep wasm32-unknown-unknown >/dev/null; then
@@ -81,9 +102,11 @@ fi
 
 >&2 cat <<EOF
 
-Congratulations!!! You're ready to develop with Stylus
+Congratulations!!! You're ready to develop with Stylus!
 
-Use "cargo stylus new" to get started:
+Use "cargo stylus new" to get started with your first project!
 
-cargo stylus new
+. $HOME/.cargo/env
+
+cargo stylus new hello-world
 EOF
