@@ -141,7 +141,7 @@ Learn more from tutorials and official Docs.rs reference.
         });
         (async () => {
           try {
-            const res = await fetch("https://api.github.com/search/repositories?q=topic:stylus+topic:arbitrum&sort=stars&order=desc&per_page=20");
+            const res = await fetch("https://api.github.com/search/repositories?q=topic:stylus+topic:arbitrum&sort=stars&order=desc&per_page=35");
             const { items } = await res.json();
             const container = document.getElementById("stylus-repos");
             const existing = new Set(Array.from(container.children).map(card => card.querySelector("h3").textContent.trim()));
