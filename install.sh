@@ -53,7 +53,8 @@ check_has_rust() {
 }
 
 if [ -z "$STYLUS_POPCON_OFF" ]; then
-	log "This installer will record the language, the os, and the architecture to
+	log "
+This installer will record the language, the os, and the architecture to
 https://popcon.stylusup.sh. To disable this functionality, control-c now, and set
 STYLUS_POPCON_OFF to anything."
 	log "Press enter to continue…"
@@ -80,11 +81,14 @@ if ! cargo stylus 2>&1 >/dev/null; then
 fi
 
 >&2 cat <<EOF
-${GREEN}🎉  Congratulations!!! You're ready to develop with Stylus!${NC}
+${GREEN}🎉  Congratulations!!! You're ready to develop with Stylus!
 
-💡  Use "cargo stylus new" to get started with your first project!
+💡  Use "cargo stylus new" to get started with your first project:
 
-🔧  . \$HOME/.cargo/env
+------------------------------------------------------------------${NC}
 
-🚀  cargo stylus new hello-world${NC}
+. \$HOME/.cargo/env
+
+cargo stylus new hello-world${NC}
+
 EOF
