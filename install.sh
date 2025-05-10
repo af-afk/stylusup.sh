@@ -29,12 +29,10 @@ log() { >&2 printf "${BLUE}ℹ️  %s${NC}\n"  "$*"; }
 die() { >&2 printf "${RED}❌ %s${NC}\n"  "$*"; exit 1; }
 
 if ! which curl >/dev/null; then
-	# TODO: install this for users too.
 	die "curl is needed for installation. You can install it with your package manager."
 fi
 
 if ! which cc >/dev/null; then
-	# TODO install for users
 	die "cc is needed for installation. You can install it with your package manager."
 fi
 
@@ -58,7 +56,8 @@ if [ -z "$STYLUS_POPCON_OFF" ]; then
 	log "This installer will record the language, the os, and the architecture to
 https://popcon.stylusup.sh. To disable this functionality, control-c now, and set
 STYLUS_POPCON_OFF to anything."
-	read -r -p $'Press enter to continue…' < /dev/tty > /dev/tty
+	log "Press enter to continue…"
+	read -r < /dev/tty > /dev/tty
 	report_popcon &
 fi
 
