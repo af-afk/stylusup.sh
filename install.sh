@@ -23,38 +23,19 @@ os="$(uname -s)"
 arch="$(uname -m)"
 lang="${LANG%%_*}"
 
-log() {
-	>&2 echo $@
-}
+NC=$'\033[0m'; BLUE=$'\033[1;34m'; RED=$'\033[1;31m'; GREEN=$'\033[1;32m'
 
-die() {
-	log $@
-	exit 1
-}
+log() { >&2 printf "${BLUE}ℹ️  %s${NC}\n"  "$*"; }
+die() { >&2 printf "${RED}❌ %s${NC}\n"  "$*"; exit 1; }
 
 if ! which curl >/dev/null; then
 	# TODO: install this for users too.
-	die "curl is needed for installation."
+	die "curl is needed for installation. You can install it with your package manager."
 fi
 
 if ! which cc >/dev/null; then
 	# TODO install for users
-	die "cc is needed for installation."
-fi
-
-if ! which pkg-config >/dev/null; then
-	# TODO install for users
-	die "pkg-config is needed for installation."
-fi
-
-if ! pkg-config libssl >/dev/null; then
-	# TODO install for users
-	die "libssl-dev is needed for installation."
-fi
-
-if ! which git >/dev/null; then
-	# TODO install for users
-	die "git is needed for installation."
+	die "cc is needed for installation. You can install it with your package manager."
 fi
 
 if [ "$os" = "Linux" ]; then
@@ -77,8 +58,7 @@ if [ -z "$STYLUS_POPCON_OFF" ]; then
 	log "This installer will record the language, the os, and the architecture to
 https://popcon.stylusup.sh. To disable this functionality, control-c now, and set
 STYLUS_POPCON_OFF to anything."
-	log "Press enter to continue."
-	head -n 1 /dev/stdin >/dev/null
+	read -r -p $'Press enter to continue…' < /dev/tty > /dev/tty
 	report_popcon &
 fi
 
@@ -101,12 +81,11 @@ if ! cargo stylus 2>&1 >/dev/null; then
 fi
 
 >&2 cat <<EOF
+${GREEN}🎉  Congratulations!!! You're ready to develop with Stylus!${NC}
 
-Congratulations!!! You're ready to develop with Stylus!
+💡  Use "cargo stylus new" to get started with your first project!
 
-Use "cargo stylus new" to get started with your first project!
+🔧  . \$HOME/.cargo/env
 
-. $HOME/.cargo/env
-
-cargo stylus new hello-world
+🚀  cargo stylus new hello-world${NC}
 EOF
