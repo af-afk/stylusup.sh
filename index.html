@@ -7,131 +7,169 @@
 	<script src="https://cdn.tailwindcss.com"></script>
 	<script>
     !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init me ws ys ps bs capture je Di ks register register_once register_for_session unregister unregister_for_session Ps getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey canRenderSurveyAsync identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty Es $s createPersonProfile Is opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing Ss debug xs getPageViewId captureTraceFeedback captureTraceMetric".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
-    posthog.init('phc_4JuhKBNqffUmqFa8ATKZQ95L13feFWl4CaAGvpCmXl6', {
-        api_host: 'https://us.i.posthog.com',
-        person_profiles: 'identified_only', // or 'always' to create profiles for anonymous users as well
+    posthog.init("phc_4JuhKBNqffUmqFa8ATKZQ95L13feFWl4CaAGvpCmXl6", {
+        api_host: "https://us.i.posthog.com",
+        person_profiles: "identified_only", // or "always" to create profiles for anonymous users as well
     })
 	</script>
   </head>
   <body class="min-h-screen flex flex-col bg-zinc-50 font-sans text-zinc-900">
-	<header class="bg-white/80 backdrop-blur sticky top-0 z-50 shadow-sm">
-	  <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-		<a href="#" class="text-lg font-semibold tracking-wide flex items-center gap-2">
-		  Stylusup
-		</a>
-		<nav class="hidden md:flex items-center gap-8 text-sm font-medium">
-		  <a href="https://thewizard.app/" target="_blank" rel="noopener" class="hover:text-indigo-600">Try online</a>
-		  <a href="#install" class="hover:text-indigo-600">Install</a>
-		  <a href="#learn" class="hover:text-indigo-600">Learn</a>
-		  <a href="#docs" class="hover:text-indigo-600">Docs</a>
-		  <a href="#resources" class="hover:text-indigo-600">Resources</a>
-		</nav>
-	  </div>
-	</header>
+      <header class="bg-white/80 backdrop-blur sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+          <a href="#" class="text-lg font-semibold tracking-wide flex items-center gap-2">
+            Stylusup
+          </a>
+          <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+            <a href="https://thewizard.app/" target="_blank" rel="noopener" class="hover:text-indigo-600">Try online</a>
+            <a href="#install" class="hover:text-indigo-600">Install</a>
+            <a href="#learn" class="hover:text-indigo-600">Learn</a>
+            <a href="#docs" class="hover:text-indigo-600">Docs</a>
+            <a href="#resources" class="hover:text-indigo-600">Resources</a>
+          </nav>
+        </div>
+      </header>
 
-	<section id="install" class="flex-1 bg-gradient-to-b from-white to-zinc-100 py-24">
-	  <div class="max-w-4xl mx-auto px-4 text-center">
-		<h1 class="text-4xl md:text-5xl font-bold mb-6">Get started with <span class="text-indigo-600">Arbitrum Stylus Rust</span></h1>
-		<p class="mb-10 text-lg text-zinc-600">Build smart contracts in Rust on any Arbitrum chain on mainnet.</p>
+      <section id="install" class="flex-1 bg-gradient-to-b from-white to-zinc-100 py-24">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+          <h1 class="text-4xl md:text-5xl font-bold mb-6">Get started with <span class="text-indigo-600">Arbitrum Stylus Rust</span></h1>
+          <p class="mb-10 text-lg text-zinc-600">Build smart contracts in Rust on any Arbitrum chain on mainnet.</p>
 
-		<div class="bg-zinc-900 text-white rounded-xl p-6 md:p-8 inline-block shadow-lg">
-		  <code class="whitespace-nowrap select-all text-base">curl -s https://stylusup.sh/install.sh | sh</code>
-		</div>
+          <div class="bg-zinc-900 text-white rounded-xl p-6 md:p-8 inline-block shadow-lg">
+            <code class="whitespace-nowrap select-all text-base">curl -s https://stylusup.sh/install.sh | sh</code>
+          </div>
 
-		<iframe
-		  class="mx-auto mt-10 rounded-xl shadow-lg w-full max-w-2xl aspect-video"
-		  src="https://www.youtube.com/embed/0rJFRfGSn80"
-		  title="Introducing Stylus"
-		  frameborder="0"
-		  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-		  allowfullscreen>
-		</iframe>
+          <iframe
+            class="mx-auto mt-10 rounded-xl shadow-lg w-full max-w-2xl aspect-video"
+            src="https://www.youtube.com/embed/0rJFRfGSn80"
+            title="Introducing Stylus"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
 
-		<p class="mt-6 text-sm text-zinc-500">Runs on Linux · macOS</p>
-	  </div>
-	</section>
+          <p class="mt-6 text-sm text-zinc-500">Runs on Linux · macOS</p>
+        </div>
+      </section>
 
-	<section id="learn" class="py-20">
-	  <div class="max-w-6xl mx-auto px-4 text-center">
-		<h2 class="text-3xl font-semibold mb-6">Why build with Stylus?</h2>
-		<div class="grid md:grid-cols-3 gap-8 text-left mt-10">
-		  <div class="p-6 bg-white rounded-2xl shadow-sm">
-			<h3 class="font-medium text-lg mb-2">Massive gas savings</h3>
-			<p class="text-zinc-600">
-			  <a href="https://blog.openzeppelin.com/poseidon-go-brr-with-stylus-cryptographic-functions-are-18x-more-gas-efficient-via-rust-on-arbitrum" class="hover:text-indigo-600">OpenZeppelin's implementation of Poseidon Hashing is 18x more efficient than Solidity, thanks to Stylus compute and memory savings.</a>
-			  <br /><br />Implement super gas efficient smart contracts safely, and easily.
-			</p>
-		  </div>
-		  <div class="p-6 bg-white rounded-2xl shadow-sm">
-			<h3 class="font-medium text-lg mb-2">Access the Rust, C, Zig, and Go ecosystem</h3>
-			<p class="text-zinc-600">
+      <section id="learn" class="py-20">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+          <h2 class="text-3xl font-semibold mb-6">Why build with Stylus?</h2>
+          <div class="grid md:grid-cols-3 gap-8 text-left mt-10">
+            <div class="p-6 bg-white rounded-2xl shadow-sm">
+              <h3 class="font-medium text-lg mb-2">Massive gas savings</h3>
+              <p class="text-zinc-600">
+                <a href="https://blog.openzeppelin.com/poseidon-go-brr-with-stylus-cryptographic-functions-are-18x-more-gas-efficient-via-rust-on-arbitrum" class="hover:text-indigo-600">OpenZeppelin"s implementation of Poseidon Hashing is 18x more efficient than Solidity, thanks to Stylus compute and memory savings.</a>
+                <br /><br />Implement super gas efficient smart contracts safely, and easily.
+              </p>
+            </div>
+            <div class="p-6 bg-white rounded-2xl shadow-sm">
+              <h3 class="font-medium text-lg mb-2">Access the Rust, C, Zig, and Go ecosystem</h3>
+              <p class="text-zinc-600">
 Smart contracts can use packages from the rest of the ecosystem. Import packages and use
 without issue!
-		</p>
-		  </div>
-		  <div class="p-6 bg-white rounded-2xl shadow-sm">
-			<h3 class="font-medium text-lg mb-2">Compatible with Solidity and Vyper</h3>
-			<p class="text-zinc-600">
+          </p>
+            </div>
+            <div class="p-6 bg-white rounded-2xl shadow-sm">
+              <h3 class="font-medium text-lg mb-2">Compatible with Solidity and Vyper</h3>
+              <p class="text-zinc-600">
 From a user perspective, Stylus smart contracts are equivalent to Solidity, Vyper, and the
 rest of the EVM smart contracts. Stylus has perfect compatibility with the rest of the
 EVM, down to the storage layout.
-			</p>
-		  </div>
-		</div>
-	  </div>
-	</section>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-	<section id="docs" class="bg-indigo-600 py-20 text-white">
-	  <div class="max-w-4xl mx-auto px-4 text-center">
-		<h2 class="text-3xl font-semibold mb-4">Read the Documentation</h2>
-		<p class="mb-8">
+      <section id="docs" class="bg-indigo-600 py-20 text-white">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+          <h2 class="text-3xl font-semibold mb-4">Read the Documentation</h2>
+          <p class="mb-8">
 Learn more from tutorials and official Docs.rs reference.
-		</p>
-		<a href="https://arbitrum.io/stylus" target="_blank" rel="noopener" class="inline-block bg-white text-indigo-600 font-medium px-6 py-3 rounded-full shadow hover:bg-zinc-100 transition">Arbitrum Docs</a>
-	  </div>
-	</section>
+          </p>
+          <a href="https://arbitrum.io/stylus" target="_blank" rel="noopener" class="inline-block bg-white text-indigo-600 font-medium px-6 py-3 rounded-full shadow hover:bg-zinc-100 transition">Arbitrum Docs</a>
+        </div>
+      </section>
 
-	<section id="resources" class="py-20">
-	  <div class="max-w-6xl mx-auto px-4 text-center">
-		<h2 class="text-3xl font-semibold mb-6">Learn More About Stylus</h2>
-		<p class="text-zinc-600 mb-12">Tutorials and documentation from the community.</p>
-		<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
-		  <article class="p-6 bg-white rounded-2xl shadow-sm hover:shadow-md transition">
-			<h3 class="font-medium mb-1">A Gentle Introduction to Stylus</h3>
-			<p class="text-zinc-600 mb-3">A simple introduction to using Stylus, introducing core concepts.</p>
-			<a href="https://docs.arbitrum.io/stylus/gentle-introduction" target="_blank" rel="noopener" class="text-indigo-600 font-medium">Read →</a>
-		  </article>
-		  <article class="p-6 bg-white rounded-2xl shadow-sm hover:shadow-md transition">
-			<h3 class="font-medium mb-1">Amazing Stylus</h3>
-			<p class="text-zinc-600 mb-3">Repositories of projects built using Stylus.</p>
-			<a href="https://github.com/OffchainLabs/awesome-stylus" class="text-indigo-600 font-medium" rel="noopener" target="_blank">
-Read more →
-			</a>
-		  </article>
-		  <article class="p-6 bg-white rounded-2xl shadow-sm hover:shadow-md transition">
-			<h3 class="font-medium mb-1">Rust For Smart Contracts</h3>
-			<p class="text-zinc-600 mb-3">Simple WIP book introducing building Smart Contracts with Rust.</p>
-			<a href="https://rust-for-smart-contracts.com" target="_blank" rel="noopener" class="text-indigo-600 font-medium">Read more →</a>
-		  </article>
-		  <article class="p-6 bg-white rounded-2xl shadow-sm hover:shadow-md transition">
-			<h3 class="font-medium mb-1">OpenZeppelin Wizard</h3>
-			<p class="text-zinc-600 mb-3">Build ERC20, ERC721, and ERC1155 contracts VERY quickly.</p>
-			<a href="https://wizard.openzeppelin.com/stylus" class="text-indigo-600 font-medium" rel="noopener" target="_blank">
-Read more →
-			</a>
-		  </article>
-		</div>
-	  </div>
-	</section>
+      <section id="resources" class="py-20">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+          <h2 class="text-3xl font-semibold mb-6">Learn More About Stylus</h2>
+          <p class="text-zinc-600 mb-12">Tutorials and documentation from the community.</p>
+          <div id="resources-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 text-left"></div>
+        </div>
+      </section>
 
-	<footer class="bg-zinc-900 text-zinc-400 py-10 text-sm">
-	  <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4">
-		<p><a href="https://x.com/superpositionso" rel="noopener noreferrer" target="_blank">© 2025 Superposition</a></p>
-		<div class="flex gap-6">
-		  <a href="https://github.com/af-afk/stylusup.sh" class="hover:text-white" target="_blank" rel="noopener noreferrer">Github</a>
-		  <a href="https://x.com/baygeeth" class="hover:text-white" target="_blank" rel="noopener noreferrer">X</a>
-		</div>
-	  </div>
-	</footer>
-  </body>
+      <section id="stylus-projects" class="mb-20">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+          <h2 class="text-3xl font-semibold mb-6">Repos built using Stylus</h2>
+          <p class="text-zinc-600 mb-12"></p>
+          <div id="stylus-repos" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 text-left"></div>
+      </section>
+
+      <script>
+        const resources = [
+          {
+            title: "A Gentle Introduction to Stylus",
+            desc: "A simple introduction to using Stylus, introducing core concepts.",
+            url: "https://docs.arbitrum.io/stylus/gentle-introduction",
+          },
+          {
+            title: "Amazing Stylus",
+            desc: "Repositories of projects built using Stylus.",
+            url: "https://github.com/OffchainLabs/awesome-stylus",
+          },
+          {
+            title: "Rust For Smart Contracts",
+            desc: "Simple WIP book introducing building Smart Contracts with Rust.",
+            url: "https://rust-for-smart-contracts.com",
+          },
+          {
+            title: "OpenZeppelin Wizard",
+            desc: "Build ERC20, ERC721, and ERC1155 contracts VERY quickly.",
+            url: "https://wizard.openzeppelin.com/stylus",
+          },
+        ];
+        const resContainer = document.getElementById("resources-grid");
+        resources.forEach(r => {
+          const card = document.createElement("a");
+          card.href = r.url;
+          card.target = "_blank";
+          card.rel = "noopener";
+          card.className = "p-6 bg-white rounded-2xl shadow-sm hover:shadow-md transition block";
+          card.innerHTML = `<h3 class="font-medium mb-1">${r.title}</h3><p class="text-zinc-600 mb-3">${r.desc}</p><span class="text-indigo-600 font-medium">Read more →</span>`;
+          resContainer.appendChild(card);
+        });
+        (async () => {
+          try {
+            const res = await fetch("https://api.github.com/search/repositories?q=topic:stylus+topic:arbitrum&sort=stars&order=desc&per_page=20");
+            const { items } = await res.json();
+            const container = document.getElementById("stylus-repos");
+            const existing = new Set(Array.from(container.children).map(card => card.querySelector("h3").textContent.trim()));
+            for (const repo of items) {
+              if (container.children.length >= 10) break; // max 10 cards
+              if (existing.has(repo.name)) continue; // skip curated
+              const card = document.createElement("a");
+              card.href = repo.html_url;
+              card.target = "_blank";
+              card.rel = "noopener";
+              card.className = "p-6 bg-white rounded-2xl shadow-sm hover:shadow-md transition flex flex-col";
+              card.innerHTML = `<h3 class="font-medium mb-1">${repo.name}</h3><p class="text-zinc-600 mb-3">${repo.description || ""}</p><span class="text-indigo-600 font-medium mt-auto">View →</span>`;
+              container.appendChild(card);
+            }
+          } catch (err) {
+            console.error("GitHub fetch failed", err);
+          }
+        })();
+      </script>
+
+      <footer class="bg-zinc-900 text-zinc-400 py-10 text-sm">
+        <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4">
+          <p><a href="https://x.com/superpositionso" rel="noopener noreferrer" target="_blank">© 2025 Superposition</a></p>
+          <div class="flex gap-6">
+            <a href="https://github.com/af-afk/stylusup.sh" class="hover:text-white" target="_blank" rel="noopener noreferrer">Github</a>
+            <a href="https://x.com/baygeeth" class="hover:text-white" target="_blank" rel="noopener noreferrer">X</a>
+          </div>
+        </div>
+      </footer>
+    </body>
 </html>
