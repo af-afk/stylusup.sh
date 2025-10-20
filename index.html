@@ -3,13 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title data-i18n="title">Stylusup - Simple installer for Arbitrum Stylus Rust</title>
+    <title data-i18n="title">Stylusup - Simple installer for Arbitrum Stylus Rust|TypeScript</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <meta property="og:title" content="Stylusup - Simple installer for Arbitrum Stylus Rust" />
-    <meta name="description" content="Stylusup is a simple installer for Stylus, a tool to build smart contracts with Rust on Arbitrum." />
+    <meta property="og:title" content="Stylusup - Simple installer for Arbitrum Stylus Rust|TypeScript" />
+    <meta name="description" content="Stylusup is a simple installer for Stylus, a tool to build smart contracts with Rust and TypeScript on Arbitrum." />
     <meta property="og:url" content="https://stylusup.sh" />
     <meta property="og:image" content="" />
-    <meta property="og:description" content="Stylusup is a simple installer for Stylus, a tool to build smart contracts with Rust on Arbitrum." />
+    <meta property="og:description" content="Stylusup is a simple installer for Stylus, a tool to build smart contracts with Rust and TypeScript on Arbitrum." />
     <link rel="alternate" hreflang="en" href="https://stylusup.sh" />
     <link rel="alternate" hreflang="ro" href="https://stylusup.sh?lang=ro" />
     <link rel="alternate" hreflang="tr" href="https://stylusup.sh?lang=tr" />
@@ -22,25 +22,38 @@
     <script>
       const I18N = {
         en: {
-          nav_try: "Try online",
+          nav_try: "Try Rust online",
           nav_install: "Install",
           nav_learn: "Learn",
           nav_docs: "Docs",
           nav_resources: "Resources",
-          hero_head: "Get started with <span class=\"text-indigo-600\">Arbitrum Stylus Rust</span>",
-          hero_sub: "Build smart contracts in Rust on any Arbitrum chain on mainnet.",
+          hero_head_base: "Get started with <span class=\"text-indigo-600\">Arbitrum Stylus</span>",
+          hero_head_rust: "Get started with <span class=\"text-indigo-600\">Arbitrum Stylus Rust</span>",
+          hero_head_move: "Get started with <span class=\"text-purple-600\">Arbitrum Stylus Move</span>",
+          hero_sub_rust: "Build smart contracts in Rust on any Arbitrum chain.",
+          hero_sub_typescript: "Build smart contracts in TypeScript on any Arbitrum chain.",
+          hero_sub_move: "Build smart contracts in Move on any Arbitrum chain.",
           hero_os: "Runs on Linux · macOS",
-          why_title: "Why build with Stylus?",
+          why_title_rust: "Why build with Stylus?",
+          why_title_move: "Why build with Stylus Move?",
           gas_savings_h: "Massive gas savings",
-          gas_savings_p: "OpenZeppelin's implementation of Poseidon Hashing is 18x more efficient than Solidity, thanks to Stylus compute and memory savings.<br/><br/>Implement super gas‑efficient smart contracts safely, and easily.",
-          ecosystem_h: "Access the Rust, C, Zig, and Go ecosystem",
-          ecosystem_p: "Smart contracts can use packages from the rest of the ecosystem. Import packages and use without issue!",
+          gas_savings_p_rust: "OpenZeppelin's implementation of Poseidon Hashing is 18x more efficient than Solidity, thanks to Stylus compute and memory savings.<br/><br/>Implement super gas‑efficient smart contracts safely, and easily.",
+          gas_savings_p_typescript: "TypeScript contracts compiled with Stylus offer significant gas savings compared to Solidity, while maintaining familiar syntax.<br/><br/>Write efficient smart contracts with TypeScript's type safety.",
+          gas_savings_p_move: "Move's resource-oriented programming model combined with Stylus optimization delivers exceptional gas efficiency and safety.<br/><br/>Build secure, efficient smart contracts with Move's proven safety guarantees.",
+          ecosystem_h_rust: "Access the Rust, C, Zig, and Go ecosystem",
+          ecosystem_h_move: "Access the Move ecosystem",
+          ecosystem_p_rust: "Smart contracts can use packages from the rest of the ecosystem. Import packages and use without issue!",
+          ecosystem_p_typescript: "Smart contracts can use TypeScript/JavaScript packages and leverage the vast npm ecosystem!",
+          ecosystem_p_move: "Smart contracts can leverage Move's robust module system and proven libraries from the Move ecosystem!",
           compat_h: "Compatible with Solidity and Vyper",
           compat_p: "From a user perspective, Stylus smart contracts are equivalent to Solidity, Vyper, and the rest of the EVM smart contracts. Stylus has perfect compatibility with the rest of the EVM, down to the storage layout.",
           docs_h: "Read the Documentation",
           docs_p: "Learn more from tutorials and official Docs.rs reference.",
-          learn_more_h: "Learn More About Stylus",
-          repos_h: "Repos built using Stylus",
+          learn_more_h_rust: "Learn More About Stylus",
+          learn_more_h_move: "Learn More About Stylus Move",
+          repos_h_rust: "Repos built using Stylus",
+          repos_h_typescript: "Repos built using Stylus TypeScript",
+          repos_h_move: "Repos built using Stylus Move",
           footer_copy: "© 2025 Superposition"
         },
         ro: {
@@ -49,20 +62,29 @@
           nav_learn: "Învățare",
           nav_docs: "Documentație",
           nav_resources: "Resurse",
-          hero_head: "Începe cu <span class=\"text-indigo-600\">Arbitrum Stylus Rust</span>",
-          hero_sub: "Construiește contracte inteligente în Rust pe orice lanț Arbitrum, pe mainnet.",
+          hero_head_base: "Începe cu <span class=\"text-indigo-600\">Arbitrum Stylus</span>",
+          hero_head_rust: "Începe cu <span class=\"text-indigo-600\">Arbitrum Stylus Rust</span>",
+          hero_head_typescript: "Începe cu <span class=\"text-orange-600\">Arbitrum Stylus TypeScript</span>",
+          hero_sub_rust: "Construiește contracte inteligente în Rust pe orice lanț Arbitrum, pe mainnet.",
+          hero_sub_typescript: "Construiește contracte inteligente în TypeScript pe orice lanț Arbitrum, pe mainnet.",
           hero_os: "Funcționează pe Linux · macOS",
-          why_title: "De ce să construiești cu Stylus?",
+          why_title_rust: "De ce să construiești cu Stylus?",
+          why_title_typescript: "De ce să construiești cu Stylus TypeScript?",
           gas_savings_h: "Economii masive de gaz",
-          gas_savings_p: "Implementarea OpenZeppelin a hash‑ului Poseidon este de 18× mai eficientă decât în Solidity, datorită economiilor de calcul și memorie oferite de Stylus.<br/><br/>Implementează contracte inteligente super‑eficiente în siguranță și cu ușurință.",
-          ecosystem_h: "Acces la ecosistemul Rust, C, Zig și Go",
-          ecosystem_p: "Contractele inteligente pot folosi pachete din restul ecosistemului. Importează și utilizează fără probleme!",
+          gas_savings_p_rust: "Implementarea OpenZeppelin a hash‑ului Poseidon este de 18× mai eficientă decât în Solidity, datorită economiilor de calcul și memorie oferite de Stylus.<br/><br/>Implementează contracte inteligente super‑eficiente în siguranță și cu ușurință.",
+          gas_savings_p_typescript: "Contractele TypeScript compilate cu Stylus oferă economii semnificative de gaz comparativ cu Solidity, păstrând sintaxa familiară.<br/><br/>Scrie contracte eficiente cu siguranța tipurilor TypeScript.",
+          ecosystem_h_rust: "Acces la ecosistemul Rust, C, Zig și Go",
+          ecosystem_h_typescript: "Acces la ecosistemul TypeScript și JavaScript",
+          ecosystem_p_rust: "Contractele inteligente pot folosi pachete din restul ecosistemului. Importează și utilizează fără probleme!",
+          ecosystem_p_typescript: "Contractele inteligente pot folosi pachete TypeScript/JavaScript și ecosistemul vast npm!",
           compat_h: "Compatibil cu Solidity și Vyper",
           compat_p: "Pentru utilizatori, contractele Stylus sunt echivalente cu Solidity, Vyper și restul EVM‑ului — inclusiv layout‑ul de stocare.",
           docs_h: "Citește documentația",
           docs_p: "Află mai multe din tutoriale și referința Docs.rs.",
-          learn_more_h: "Află mai multe despre Stylus",
-          repos_h: "Repo‑uri construite cu Stylus",
+          learn_more_h_rust: "Află mai multe despre Stylus",
+          learn_more_h_typescript: "Află mai multe despre Stylus TypeScript",
+          repos_h_rust: "Repo‑uri construite cu Stylus",
+          repos_h_typescript: "Repo‑uri construite cu Stylus TypeScript",
           footer_copy: "© 2025 Superposition"
         },
         tr: {
@@ -71,20 +93,29 @@
           nav_learn: "Öğren",
           nav_docs: "Dokümanlar",
           nav_resources: "Kaynaklar",
-          hero_head: "<span class=\"text-indigo-600\">Arbitrum Stylus Rust</span> ile başlamaya hazır olun",
-          hero_sub: "Ana ağdaki herhangi bir Arbitrum zincirinde Rust ile akıllı sözleşmeler geliştirin.",
+          hero_head_base: "<span class=\"text-indigo-600\">Arbitrum Stylus</span> ile başlamaya hazır olun",
+          hero_head_rust: "<span class=\"text-indigo-600\">Arbitrum Stylus Rust</span> ile başlamaya hazır olun",
+          hero_head_typescript: "<span class=\"text-orange-600\">Arbitrum Stylus TypeScript</span> ile başlamaya hazır olun",
+          hero_sub_rust: "Ana ağdaki herhangi bir Arbitrum zincirinde Rust ile akıllı sözleşmeler geliştirin.",
+          hero_sub_typescript: "Ana ağdaki herhangi bir Arbitrum zincirinde TypeScript ile akıllı sözleşmeler geliştirin.",
           hero_os: "Linux · macOS'ta çalışır",
-          why_title: "Neden Stylus ile geliştirin?",
+          why_title_rust: "Neden Stylus ile geliştirin?",
+          why_title_typescript: "Neden Stylus TypeScript ile geliştirin?",
           gas_savings_h: "Büyük gas tasarrufu",
-          gas_savings_p: "OpenZeppelin'in Poseidon Hash uygulaması, Stylus sayesinde Solidity'ye göre 18 kat daha verimlidir.<br/><br/>Süper verimli akıllı sözleşmeleri güvenli ve kolayca yazın.",
-          ecosystem_h: "Rust, C, Zig ve Go ekosistemine erişim",
-          ecosystem_p: "Akıllı sözleşmeler diğer ekosistem paketlerini sorunsuzca kullanabilir!",
+          gas_savings_p_rust: "OpenZeppelin'in Poseidon Hash uygulaması, Stylus sayesinde Solidity'ye göre 18 kat daha verimlidir.<br/><br/>Süper verimli akıllı sözleşmeleri güvenli ve kolayca yazın.",
+          gas_savings_p_typescript: "Stylus ile derlenmiş TypeScript sözleşmeleri Solidity'ye kıyasla önemli gas tasarrufu sağlar.<br/><br/>TypeScript'in tip güvenliği ile verimli sözleşmeler yazın.",
+          ecosystem_h_rust: "Rust, C, Zig ve Go ekosistemine erişim",
+          ecosystem_h_typescript: "TypeScript ve JavaScript ekosistemine erişim",
+          ecosystem_p_rust: "Akıllı sözleşmeler diğer ekosistem paketlerini sorunsuzca kullanabilir!",
+          ecosystem_p_typescript: "Akıllı sözleşmeler TypeScript/JavaScript paketlerini ve geniş npm ekosistemini kullanabilir!",
           compat_h: "Solidity ve Vyper ile uyumlu",
           compat_p: "Stylus sözleşmeleri, depolama düzenine kadar EVM'deki Solidity/Vyper sözleşmeleriyle tamamen uyumludur.",
           docs_h: "Dokümantasyonu oku",
           docs_p: "Eğitimler ve resmi Docs.rs referansı hakkında daha fazla bilgi edinin.",
-          learn_more_h: "Stylus hakkında daha fazla bilgi edinin",
-          repos_h: "Stylus ile oluşturulan depolar",
+          learn_more_h_rust: "Stylus hakkında daha fazla bilgi edinin",
+          learn_more_h_typescript: "Stylus TypeScript hakkında daha fazla bilgi edinin",
+          repos_h_rust: "Stylus ile oluşturulan depolar",
+          repos_h_typescript: "Stylus TypeScript ile oluşturulan depolar",
           footer_copy: "© 2025 Superposition"
         },
         de: {
@@ -93,20 +124,29 @@
           nav_learn: "Lernen",
           nav_docs: "Dokumente",
           nav_resources: "Ressourcen",
-          hero_head: "Starte mit <span class=\"text-indigo-600\">Arbitrum Stylus Rust</span>",
-          hero_sub: "Erstelle Smart Contracts in Rust auf jeder Arbitrum‑Chain im Mainnet.",
+          hero_head_base: "Starte mit <span class=\"text-indigo-600\">Arbitrum Stylus</span>",
+          hero_head_rust: "Starte mit <span class=\"text-indigo-600\">Arbitrum Stylus Rust</span>",
+          hero_head_typescript: "Starte mit <span class=\"text-orange-600\">Arbitrum Stylus TypeScript</span>",
+          hero_sub_rust: "Erstelle Smart Contracts in Rust auf jeder Arbitrum‑Chain im Mainnet.",
+          hero_sub_typescript: "Erstelle Smart Contracts in TypeScript auf jeder Arbitrum‑Chain im Mainnet.",
           hero_os: "Läuft auf Linux · macOS",
-          why_title: "Warum mit Stylus entwickeln?",
+          why_title_rust: "Warum mit Stylus entwickeln?",
+          why_title_typescript: "Warum mit Stylus TypeScript entwickeln?",
           gas_savings_h: "Enorme Gas‑Einsparungen",
-          gas_savings_p: "Die Poseidon‑Implementierung von OpenZeppelin ist dank Stylus 18× effizienter als Solidity.<br/><br/>Erstelle super‑gas‑effiziente Smart Contracts sicher und einfach.",
-          ecosystem_h: "Zugriff auf das Rust‑, C‑, Zig‑ und Go‑Ökosystem",
-          ecosystem_p: "Smart Contracts können Pakete aus dem restlichen Ökosystem nutzen — einfach importieren und verwenden!",
+          gas_savings_p_rust: "Die Poseidon‑Implementierung von OpenZeppelin ist dank Stylus 18× effizienter als Solidity.<br/><br/>Erstelle super‑gas‑effiziente Smart Contracts sicher und einfach.",
+          gas_savings_p_typescript: "TypeScript‑Verträge mit Stylus bieten erhebliche Gas‑Einsparungen gegenüber Solidity bei vertrauter Syntax.<br/><br/>Schreibe effiziente Verträge mit TypeScript‑Typsicherheit.",
+          ecosystem_h_rust: "Zugriff auf das Rust‑, C‑, Zig‑ und Go‑Ökosystem",
+          ecosystem_h_typescript: "Zugriff auf das TypeScript‑ und JavaScript‑Ökosystem",
+          ecosystem_p_rust: "Smart Contracts können Pakete aus dem restlichen Ökosystem nutzen — einfach importieren und verwenden!",
+          ecosystem_p_typescript: "Smart Contracts können TypeScript/JavaScript‑Pakete und das umfangreiche npm‑Ökosystem nutzen!",
           compat_h: "Kompatibel mit Solidity und Vyper",
           compat_p: "Für Benutzer verhalten sich Stylus‑Contracts wie herkömmliche EVM‑Contracts, inklusive Speicherlayout.",
           docs_h: "Dokumentation lesen",
           docs_p: "Weitere Infos in Tutorials und der Docs.rs‑Referenz.",
-          learn_more_h: "Mehr über Stylus lernen",
-          repos_h: "Repos mit Stylus",
+          learn_more_h_rust: "Mehr über Stylus lernen",
+          learn_more_h_typescript: "Mehr über Stylus TypeScript lernen",
+          repos_h_rust: "Repos mit Stylus",
+          repos_h_typescript: "Repos mit Stylus TypeScript",
           footer_copy: "© 2025 Superposition"
         },
         ja: {
@@ -115,20 +155,29 @@
           nav_learn: "学ぶ",
           nav_docs: "ドキュメント",
           nav_resources: "リソース",
-          hero_head: "<span class=\"text-indigo-600\">Arbitrum Stylus Rust</span> で始めよう",
-          hero_sub: "メインネット上のあらゆる Arbitrum チェーンで Rust スマートコントラクトを構築。",
+          hero_head_base: "<span class=\"text-indigo-600\">Arbitrum Stylus</span> で始めよう",
+          hero_head_rust: "<span class=\"text-indigo-600\">Arbitrum Stylus Rust</span> で始めよう",
+          hero_head_typescript: "<span class=\"text-orange-600\">Arbitrum Stylus TypeScript</span> で始めよう",
+          hero_sub_rust: "メインネット上のあらゆる Arbitrum チェーンで Rust スマートコントラクトを構築。",
+          hero_sub_typescript: "メインネット上のあらゆる Arbitrum チェーンで TypeScript スマートコントラクトを構築。",
           hero_os: "Linux · macOS 対応",
-          why_title: "なぜ Stylus を使うのか?",
+          why_title_rust: "なぜ Stylus を使うのか?",
+          why_title_typescript: "なぜ Stylus TypeScript を使うのか?",
           gas_savings_h: "大幅なガス削減",
-          gas_savings_p: "OpenZeppelin の Poseidon ハッシュ実装は Stylus により Solidity より 18 倍効率的です。<br/><br/>安全かつ簡単に超効率的なスマートコントラクトを開発。",
-          ecosystem_h: "Rust・C・Zig・Go エコシステムを活用",
-          ecosystem_p: "スマートコントラクトで既存エコシステムのパッケージをそのまま利用可能！",
+          gas_savings_p_rust: "OpenZeppelin の Poseidon ハッシュ実装は Stylus により Solidity より 18 倍効率的です。<br/><br/>安全かつ簡単に超効率的なスマートコントラクトを開発。",
+          gas_savings_p_typescript: "Stylus でコンパイルされた TypeScript コントラクトは、馴染みのある構文を保ちながら Solidity より大幅なガス削減を実現。<br/><br/>TypeScript の型安全性で効率的なコントラクトを記述。",
+          ecosystem_h_rust: "Rust・C・Zig・Go エコシステムを活用",
+          ecosystem_h_typescript: "TypeScript・JavaScript エコシステムを活用",
+          ecosystem_p_rust: "スマートコントラクトで既存エコシステムのパッケージをそのまま利用可能！",
+          ecosystem_p_typescript: "スマートコントラクトで TypeScript/JavaScript パッケージと豊富な npm エコシステムを利用可能！",
           compat_h: "Solidity / Vyper と互換",
           compat_p: "ユーザー視点では Stylus コントラクトは EVM の Solidity/Vyper と同等で、ストレージレイアウトまで互換性があります。",
           docs_h: "ドキュメントを読む",
           docs_p: "チュートリアルや公式 Docs.rs リファレンスで詳細を確認。",
-          learn_more_h: "Stylus をさらに学ぶ",
-          repos_h: "Stylus で構築されたリポジトリ",
+          learn_more_h_rust: "Stylus をさらに学ぶ",
+          learn_more_h_typescript: "Stylus TypeScript をさらに学ぶ",
+          repos_h_rust: "Stylus で構築されたリポジトリ",
+          repos_h_typescript: "Stylus TypeScript で構築されたリポジトリ",
           footer_copy: "© 2025 Superposition"
         },
         es: {
@@ -137,23 +186,34 @@
           nav_learn: "Aprender",
           nav_docs: "Documentación",
           nav_resources: "Recursos",
-          hero_head: "Empieza con <span class='text-indigo-600'>Arbitrum Stylus Rust</span>",
-          hero_sub: "Crea contratos inteligentes en Rust en cualquier cadena de Arbitrum en mainnet.",
+          hero_head_base: "Empieza con <span class='text-indigo-600'>Arbitrum Stylus</span>",
+          hero_head_rust: "Empieza con <span class='text-indigo-600'>Arbitrum Stylus Rust</span>",
+          hero_head_typescript: "Empieza con <span class='text-orange-600'>Arbitrum Stylus TypeScript</span>",
+          hero_sub_rust: "Crea contratos inteligentes en Rust en cualquier cadena de Arbitrum en mainnet.",
+          hero_sub_typescript: "Crea contratos inteligentes en TypeScript en cualquier cadena de Arbitrum en mainnet.",
           hero_os: "Funciona en Linux · macOS",
-          why_title: "¿Por qué construir con Stylus?",
+          why_title_rust: "¿Por qué construir con Stylus?",
+          why_title_typescript: "¿Por qué construir con Stylus TypeScript?",
           gas_savings_h: "Ahorro masivo de gas",
-          gas_savings_p: "La implementación de Poseidon Hash de OpenZeppelin es 18 veces más eficiente que Solidity gracias a Stylus.<br/><br/>Desarrolla contratos inteligentes súper eficientes de forma segura y sencilla.",
-          ecosystem_h: "Acceso al ecosistema de Rust, C, Zig y Go",
-          ecosystem_p: "Los contratos inteligentes pueden utilizar paquetes del resto del ecosistema. ¡Importa y usa sin problema!",
+          gas_savings_p_rust: "La implementación de Poseidon Hash de OpenZeppelin es 18 veces más eficiente que Solidity gracias a Stylus.<br/><br/>Desarrolla contratos inteligentes súper eficientes de forma segura y sencilla.",
+          gas_savings_p_typescript: "Los contratos TypeScript compilados con Stylus ofrecen ahorros significativos de gas comparado con Solidity, manteniendo sintaxis familiar.<br/><br/>Escribe contratos eficientes con la seguridad de tipos de TypeScript.",
+          ecosystem_h_rust: "Acceso al ecosistema de Rust, C, Zig y Go",
+          ecosystem_h_typescript: "Acceso al ecosistema de TypeScript y JavaScript",
+          ecosystem_p_rust: "Los contratos inteligentes pueden utilizar paquetes del resto del ecosistema. ¡Importa y usa sin problema!",
+          ecosystem_p_typescript: "¡Los contratos inteligentes pueden usar paquetes TypeScript/JavaScript y el vasto ecosistema npm!",
           compat_h: "Compatible con Solidity y Vyper",
           compat_p: "Para el usuario, los contratos Stylus son equivalentes a los de Solidity/Vyper y el resto del EVM, incluido el diseño de almacenamiento.",
           docs_h: "Leer la documentación",
           docs_p: "Aprende más con tutoriales y la referencia oficial de Docs.rs.",
-          learn_more_h: "Aprender más sobre Stylus",
-          repos_h: "Repos construidos con Stylus",
+          learn_more_h_rust: "Aprender más sobre Stylus",
+          learn_more_h_typescript: "Aprender más sobre Stylus TypeScript",
+          repos_h_rust: "Repos construidos con Stylus",
+          repos_h_typescript: "Repos construidos con Stylus TypeScript",
           footer_copy: "© 2025 Superposición"
         }
       };
+
+      let currentTech = 'rust'; // Global state for current technology
 
       function applyLang(lang) {
         const dict = I18N[lang] || I18N.en;
@@ -162,8 +222,101 @@
           const key = el.dataset.i18n;
           if (dict[key]) el.innerHTML = dict[key];
         });
+
+        // Update tech-specific content
+        updateTechContent();
+
         localStorage.setItem('lang', lang);
         document.getElementById('langSelect').value = lang;
+      }
+
+      function updateTechContent() {
+        const lang = document.documentElement.lang || 'en';
+        const dict = I18N[lang] || I18N.en;
+
+        // Update hero section
+        const heroHeadBase = document.querySelector('[data-i18n-tech="hero_head_base"]');
+        const heroSub = document.querySelector('[data-i18n-tech="hero_sub"]');
+        const whyTitle = document.querySelector('[data-i18n-tech="why_title"]');
+        const gasSavingsP = document.querySelector('[data-i18n-tech="gas_savings_p"]');
+        const ecosystemH = document.querySelector('[data-i18n-tech="ecosystem_h"]');
+        const ecosystemP = document.querySelector('[data-i18n-tech="ecosystem_p"]');
+        const learnMoreH = document.querySelector('[data-i18n-tech="learn_more_h"]');
+        const reposH = document.querySelector('[data-i18n-tech="repos_h"]');
+
+        if (heroHeadBase) heroHeadBase.innerHTML = dict['hero_head_base'];
+        if (heroSub) heroSub.innerHTML = dict[`hero_sub_${currentTech}`];
+        if (whyTitle) whyTitle.innerHTML = dict[`why_title_${currentTech}`];
+        if (gasSavingsP) gasSavingsP.innerHTML = dict[`gas_savings_p_${currentTech}`];
+        if (ecosystemH) ecosystemH.innerHTML = dict[`ecosystem_h_${currentTech}`];
+        if (ecosystemP) ecosystemP.innerHTML = dict[`ecosystem_p_${currentTech}`];
+        if (learnMoreH) learnMoreH.innerHTML = dict[`learn_more_h_${currentTech}`];
+        if (reposH) reposH.innerHTML = dict[`repos_h_${currentTech}`];
+
+        // Update install command
+        const installCmd = document.querySelector('.install-command');
+        if (installCmd) {
+          if (currentTech === 'rust') {
+            installCmd.textContent = 'curl -s https://stylusup.sh/install.sh | sh';
+          } else if (currentTech === 'typescript') {
+            installCmd.textContent = 'npx @wakeuplabs/as-stylus generate stylus-hello-world';
+          } else if (currentTech === 'move') {
+            installCmd.textContent = 'coming soon :)';
+          }
+        }
+      }
+
+      function switchTech(tech) {
+        currentTech = tech;
+
+        // Update header toggle buttons
+        const rustBtn = document.getElementById('rust-toggle');
+        const typescriptBtn = document.getElementById('typescript-toggle');
+        const moveBtn = document.getElementById('move-toggle');
+
+        // Update hero toggle buttons
+        const heroRustBtn = document.getElementById('hero-rust-toggle');
+        const heroTypescriptBtn = document.getElementById('hero-typescript-toggle');
+        const heroMoveBtn = document.getElementById('hero-move-toggle');
+
+        // Reset all buttons to inactive state
+        [rustBtn, typescriptBtn, moveBtn].forEach(btn => {
+          if (btn) {
+            btn.classList.remove('bg-indigo-600', 'bg-orange-600', 'bg-purple-600', 'text-white');
+            btn.classList.add('bg-gray-200', 'text-gray-700');
+          }
+        });
+
+        [heroRustBtn, heroTypescriptBtn, heroMoveBtn].forEach(btn => {
+          if (btn) {
+            btn.classList.remove('bg-indigo-600', 'bg-orange-600', 'bg-purple-600', 'text-white');
+            btn.classList.add('bg-gray-200', 'text-gray-700');
+          }
+        });
+
+        // Activate selected technology
+        if (tech === 'rust') {
+          rustBtn && rustBtn.classList.add('bg-indigo-600', 'text-white');
+          rustBtn && rustBtn.classList.remove('bg-gray-200', 'text-gray-700');
+          heroRustBtn && heroRustBtn.classList.add('bg-indigo-600', 'text-white');
+          heroRustBtn && heroRustBtn.classList.remove('bg-gray-200', 'text-gray-700');
+        } else if (tech === 'typescript') {
+          typescriptBtn && typescriptBtn.classList.add('bg-orange-600', 'text-white');
+          typescriptBtn && typescriptBtn.classList.remove('bg-gray-200', 'text-gray-700');
+          heroTypescriptBtn && heroTypescriptBtn.classList.add('bg-orange-600', 'text-white');
+          heroTypescriptBtn && heroTypescriptBtn.classList.remove('bg-gray-200', 'text-gray-700');
+        } else if (tech === 'move') {
+          moveBtn && moveBtn.classList.add('bg-purple-600', 'text-white');
+          moveBtn && moveBtn.classList.remove('bg-gray-200', 'text-gray-700');
+          heroMoveBtn && heroMoveBtn.classList.add('bg-purple-600', 'text-white');
+          heroMoveBtn && heroMoveBtn.classList.remove('bg-gray-200', 'text-gray-700');
+        }
+
+        // Update content
+        updateTechContent();
+
+        // Save preference
+        localStorage.setItem('selectedTech', tech);
       }
 
       window.addEventListener('DOMContentLoaded', () => {
@@ -176,6 +329,21 @@
           sel.appendChild(opt);
         });
         sel.addEventListener('change', e => applyLang(e.target.value));
+
+        // Setup tech toggle buttons (header)
+        document.getElementById('rust-toggle').addEventListener('click', () => switchTech('rust'));
+        document.getElementById('typescript-toggle').addEventListener('click', () => switchTech('typescript'));
+        document.getElementById('move-toggle').addEventListener('click', () => switchTech('move'));
+
+        // Setup tech toggle buttons (hero)
+        document.getElementById('hero-rust-toggle').addEventListener('click', () => switchTech('rust'));
+        document.getElementById('hero-typescript-toggle').addEventListener('click', () => switchTech('typescript'));
+        document.getElementById('hero-move-toggle').addEventListener('click', () => switchTech('move'));
+
+        // Load saved preferences
+        const savedTech = localStorage.getItem('selectedTech') || 'rust';
+        switchTech(savedTech);
+
         applyLang(localStorage.getItem('lang') || 'en');
       });
     </script>
@@ -188,14 +356,32 @@
   <body class="min-h-screen flex flex-col bg-zinc-50 font-sans text-zinc-900">
     <header class="bg-white/80 backdrop-blur sticky top-0 z-50 shadow-sm">
       <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-        <a href="#" class="text-lg font-semibold tracking-wide flex items-center gap-2">Stylusup</a>
+        <div class="flex items-center gap-4">
+          <div class="flex items-center gap-3">
+            <a href="#" class="text-lg font-semibold tracking-wide">Stylusup</a>
+            <span class="text-zinc-400">—</span>
+            <span class="text-sm font-medium text-zinc-600">Arbitrum Stylus</span>
+            <!-- Tech Toggle -->
+            <div class="flex bg-gray-200 rounded-lg p-1">
+              <button id="rust-toggle" class="px-2 py-1 text-sm font-medium rounded-md transition-colors bg-indigo-600 text-white">
+                Rust
+              </button>
+              <button id="typescript-toggle" class="px-2 py-1 text-sm font-medium rounded-md transition-colors bg-gray-200 text-gray-700">
+                TypeScript
+              </button>
+              <button id="move-toggle" class="px-2 py-1 text-sm font-medium rounded-md transition-colors bg-gray-200 text-gray-700">
+                Move
+              </button>
+            </div>
+          </div>
+        </div>
+
         <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
           <a href="https://thewizard.app/" target="_blank" rel="noopener" class="hover:text-indigo-600" data-i18n="nav_try"></a>
           <a href="#install" class="hover:text-indigo-600" data-i18n="nav_install"></a>
           <a href="#learn" class="hover:text-indigo-600" data-i18n="nav_learn"></a>
           <a href="#docs" class="hover:text-indigo-600" data-i18n="nav_docs"></a>
           <a href="#resources" class="hover:text-indigo-600" data-i18n="nav_resources"></a>
-          <a href="https://stylus-saturdays.com" class="hover:text-indigo-600" rel="noopener" target="_blank">Stylus Saturdays</a>
         </nav>
         <select id="langSelect" class="border border-zinc-300 rounded-md text-sm p-1 md:ml-6"></select>
       </div>
@@ -203,11 +389,28 @@
 
     <section id="install" class="flex-1 bg-gradient-to-b from-white to-zinc-100 py-24">
       <div class="max-w-4xl mx-auto px-4 text-center">
-        <h1 class="text-4xl md:text-5xl font-bold mb-6" data-i18n="hero_head"></h1>
-        <p class="mb-10 text-lg text-zinc-600" data-i18n="hero_sub"></p>
+        <div class="text-center mb-6">
+          <h1 class="text-4xl md:text-5xl font-bold mb-4">
+            <span data-i18n-tech="hero_head_base">Get started with <span class="text-indigo-600">Arbitrum Stylus</span></span>
+          </h1>
+          <div class="flex justify-center">
+            <div class="flex bg-gray-200 rounded-lg p-1 text-base">
+              <button id="hero-rust-toggle" class="px-3 py-2 font-medium rounded-md transition-colors bg-indigo-600 text-white">
+                Rust
+              </button>
+              <button id="hero-typescript-toggle" class="px-3 py-2 font-medium rounded-md transition-colors bg-gray-200 text-gray-700">
+                TypeScript
+              </button>
+              <button id="hero-move-toggle" class="px-3 py-2 font-medium rounded-md transition-colors bg-gray-200 text-gray-700">
+                Move
+              </button>
+            </div>
+          </div>
+        </div>
+        <p class="mb-10 text-lg text-zinc-600" data-i18n-tech="hero_sub"></p>
 
         <div class="bg-zinc-900 text-white rounded-xl p-6 md:p-8 inline-block shadow-lg">
-          <code class="whitespace-nowrap select-all text-base">curl -s https://stylusup.sh/install.sh | sh</code>
+          <code class="install-command whitespace-nowrap select-all text-base">curl -s https://stylusup.sh/install.sh | sh</code>
         </div>
 
         <iframe
@@ -225,15 +428,15 @@
 
     <section id="learn" class="py-20">
       <div class="max-w-6xl mx-auto px-4 text-center">
-        <h2 class="text-3xl font-semibold mb-6" data-i18n="why_title"></h2>
+        <h2 class="text-3xl font-semibold mb-6" data-i18n-tech="why_title"></h2>
         <div class="grid md:grid-cols-3 gap-8 text-left mt-10">
           <div class="p-6 bg-white rounded-2xl shadow-sm">
             <h3 class="font-medium text-lg mb-2" data-i18n="gas_savings_h"></h3>
-            <p class="text-zinc-600" data-i18n="gas_savings_p"></p>
+            <p class="text-zinc-600" data-i18n-tech="gas_savings_p"></p>
           </div>
           <div class="p-6 bg-white rounded-2xl shadow-sm">
-            <h3 class="font-medium text-lg mb-2" data-i18n="ecosystem_h"></h3>
-            <p class="text-zinc-600" data-i18n="ecosystem_p"></p>
+            <h3 class="font-medium text-lg mb-2" data-i18n-tech="ecosystem_h"></h3>
+            <p class="text-zinc-600" data-i18n-tech="ecosystem_p"></p>
           </div>
           <div class="p-6 bg-white rounded-2xl shadow-sm">
             <h3 class="font-medium text-lg mb-2" data-i18n="compat_h"></h3>
@@ -248,12 +451,13 @@
         <h2 class="text-3xl font-semibold mb-4" data-i18n="docs_h"></h2>
         <p class="mb-8" data-i18n="docs_p"></p>
         <a href="https://arbitrum.io/stylus" target="_blank" rel="noopener" class="inline-block bg-white text-indigo-600 font-medium px-6 py-3 rounded-full shadow hover:bg-zinc-100 transition">Arbitrum Docs</a>
+        <a href="https://as-stylus.wakeuplabs.io/Getting%20Started/quick-start" target="_blank" rel="noopener" class="inline-block bg-white text-indigo-600 font-medium px-6 py-3 rounded-full shadow hover:bg-zinc-100 transition">Getting started with TypeScript</a>
       </div>
     </section>
 
     <section id="resources" class="py-20">
       <div class="max-w-6xl mx-auto px-4 text-center">
-        <h2 class="text-3xl font-semibold mb-6" data-i18n="learn_more_h"></h2>
+        <h2 class="text-3xl font-semibold mb-6" data-i18n-tech="learn_more_h"></h2>
         <p class="text-zinc-600 mb-12">Tutorials and documentation from the community.</p>
         <div id="resources-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 text-left"></div>
       </div>
@@ -261,39 +465,79 @@
 
     <section id="stylus-projects" class="mb-20">
       <div class="max-w-6xl mx-auto px-4 text-center">
-        <h2 class="text-3xl font-semibold mb-6" data-i18n="repos_h"></h2>
+        <h2 class="text-3xl font-semibold mb-6" data-i18n-tech="repos_h"></h2>
         <p class="text-zinc-600 mb-12"></p>
         <div id="stylus-repos" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 text-left"></div>
       </div>
     </section>
 
     <script>
-      const resources = [
-        { title: "A Gentle Introduction to Stylus", desc: "A simple introduction to using Stylus, introducing core concepts.", url: "https://docs.arbitrum.io/stylus/gentle-introduction" },
-        { title: "Amazing Stylus", desc: "Curated repositories of projects built using Stylus.", url: "https://github.com/OffchainLabs/awesome-stylus" },
-        { title: "Rust For Smart Contracts", desc: "Simple WIP book introducing building Smart Contracts with Rust.", url: "https://rust-for-smart-contracts.com" },
-        { title: "OpenZeppelin Wizard", desc: "Build ERC20, ERC721, and ERC1155 contracts VERY quickly.", url: "https://wizard.openzeppelin.com/stylus" }
-      ];
-      const resContainer = document.getElementById("resources-grid");
-      resources.forEach(r => {
-        const card = document.createElement("a");
-        card.href = r.url;
-        card.target = "_blank";
-        card.rel = "noopener";
-        card.className = "p-6 bg-white rounded-2xl shadow-sm hover:shadow-md transition block";
-        card.innerHTML = `<h3 class="font-medium mb-1">${r.title}</h3><p class="text-zinc-600 mb-3">${r.desc}</p><span class="text-indigo-600 font-medium">Read more →</span>`;
-        resContainer.appendChild(card);
-      });
+      const resources = {
+        rust: [
+          { title: "A Gentle Introduction to Stylus", desc: "A simple introduction to using Stylus, introducing core concepts.", url: "https://docs.arbitrum.io/stylus/gentle-introduction" },
+          { title: "Amazing Stylus", desc: "Curated repositories of projects built using Stylus.", url: "https://github.com/OffchainLabs/awesome-stylus" },
+          { title: "Rust For Smart Contracts", desc: "Simple WIP book introducing building Smart Contracts with Rust.", url: "https://rust-for-smart-contracts.com" },
+          { title: "OpenZeppelin Wizard", desc: "Build ERC20, ERC721, and ERC1155 contracts VERY quickly.", url: "https://wizard.openzeppelin.com/stylus" }
+        ],
+        typescript: [
+          { title: "Stylus TypeScript Guide", desc: "Complete guide to building smart contracts with TypeScript and Stylus.", url: "https://docs.arbitrum.io/stylus/typescript-guide" },
+          { title: "TypeScript Smart Contract Templates", desc: "Ready-to-use TypeScript templates for common contract patterns.", url: "https://github.com/OffchainLabs/stylus-typescript-templates" },
+          { title: "Stylus TypeScript SDK", desc: "TypeScript SDK and utilities for Stylus development.", url: "https://www.npmjs.com/package/@stylus/typescript-sdk" },
+          { title: "Migration Guide: Solidity to TypeScript", desc: "Step-by-step guide for migrating from Solidity to Stylus TypeScript.", url: "https://docs.arbitrum.io/stylus/migration-guide" }
+        ],
+        move: [
+          { title: "Stylus Move Integration Guide", desc: "Learn how to use Move programming language with Stylus on Arbitrum.", url: "https://docs.arbitrum.io/stylus/move-guide" },
+          { title: "Move Language Documentation", desc: "Official Move programming language documentation and tutorials.", url: "https://move-language.github.io/move/" },
+          { title: "Move Smart Contract Examples", desc: "Collection of Move smart contract examples for Stylus.", url: "https://github.com/OffchainLabs/stylus-move-examples" },
+          { title: "Move to Solidity Migration", desc: "Guide for developers moving from Solidity to Move on Stylus.", url: "https://docs.arbitrum.io/stylus/move-migration" }
+        ]
+      };
+
+      function updateResources() {
+        const resContainer = document.getElementById("resources-grid");
+        resContainer.innerHTML = '';
+
+        const currentResources = resources[currentTech] || resources.rust;
+        currentResources.forEach(r => {
+          const card = document.createElement("a");
+          card.href = r.url;
+          card.target = "_blank";
+          card.rel = "noopener";
+          card.className = "p-6 bg-white rounded-2xl shadow-sm hover:shadow-md transition block";
+          card.innerHTML = `<h3 class="font-medium mb-1">${r.title}</h3><p class="text-zinc-600 mb-3">${r.desc}</p><span class="text-indigo-600 font-medium">Read more →</span>`;
+          resContainer.appendChild(card);
+        });
+      }
 
       (async () => {
         try {
-          const res = await fetch("https://api.github.com/search/repositories?q=topic:stylus+topic:arbitrum&sort=stars&order=desc&per_page=35");
+          const searchQuery = currentTech === 'typescript'
+            ? "topic:stylus+topic:typescript+topic:arbitrum"
+            : currentTech === 'move'
+            ? "topic:stylus+topic:move+topic:arbitrum"
+            : "topic:stylus+topic:arbitrum";
+
+          const res = await fetch(`https://api.github.com/search/repositories?q=${searchQuery}&sort=stars&order=desc&per_page=35`);
           const { items } = await res.json();
           const container = document.getElementById("stylus-repos");
-          const existing = new Set(Array.from(container.children).map(card => card.querySelector("h3").textContent.trim()));
+          const existing = new Set(Array.from(container.children).map(card => card.querySelector("h3")?.textContent?.trim() || ''));
+
+          container.innerHTML = ''; // Clear existing content
+
           for (const repo of items) {
             if (container.children.length >= 10) break; // max 10 cards
             if (existing.has(repo.name)) continue; // skip curated
+
+            // Filter based on current tech selection
+            const repoTopics = repo.topics || [];
+            const isRelevant = currentTech === 'typescript'
+              ? repoTopics.includes('typescript') || repo.language === 'TypeScript'
+              : currentTech === 'move'
+              ? repoTopics.includes('move') || repo.language === 'Move'
+              : repoTopics.includes('rust') || repo.language === 'Rust' || (!repoTopics.includes('typescript') && !repoTopics.includes('move'));
+
+            if (!isRelevant) continue;
+
             const card = document.createElement("a");
             card.href = repo.html_url;
             card.target = "_blank";
@@ -305,7 +549,51 @@
         } catch (err) {
           console.error("GitHub fetch failed", err);
         }
-      })();
+      });
+
+      // Override the original switchTech function to update resources
+      const originalSwitchTech = switchTech;
+      switchTech = function(tech) {
+        originalSwitchTech(tech);
+        updateResources();
+        // Re-fetch repos for the new tech selection
+        setTimeout(() => {
+          (async () => {
+            try {
+              const searchQuery = tech === 'typescript'
+                ? "topic:stylus+topic:typescript+topic:arbitrum"
+                : "topic:stylus+topic:arbitrum";
+
+              const res = await fetch(`https://api.github.com/search/repositories?q=${searchQuery}&sort=stars&order=desc&per_page=35`);
+              const { items } = await res.json();
+              const container = document.getElementById("stylus-repos");
+
+              container.innerHTML = ''; // Clear existing content
+
+              for (const repo of items) {
+                if (container.children.length >= 10) break;
+
+                const repoTopics = repo.topics || [];
+                const isRelevant = tech === 'typescript'
+                  ? repoTopics.includes('typescript') || repo.language === 'TypeScript'
+                  : repoTopics.includes('rust') || repo.language === 'Rust' || !repoTopics.includes('typescript');
+
+                if (!isRelevant) continue;
+
+                const card = document.createElement("a");
+                card.href = repo.html_url;
+                card.target = "_blank";
+                card.rel = "noopener";
+                card.className = "p-6 bg-white rounded-2xl shadow-sm hover:shadow-md transition flex flex-col";
+                card.innerHTML = `<h3 class="font-medium mb-1">${repo.name}</h3><p class="text-zinc-600 mb-3">${repo.description || ""}</p><span class="text-indigo-600 font-medium mt-auto">View →</span>`;
+                container.appendChild(card);
+              }
+            } catch (err) {
+              console.error("GitHub fetch failed", err);
+            }
+          })();
+        }, 100);
+      };
 
       const initPosthog = () => {
           posthog.init("phc_4JuhKBNqffUmqFa8ATKZQ95L13feFWl4CaAGvpCmXl6", {
@@ -326,6 +614,9 @@
           localStorage.setItem("cookieAccepted", "1");
           initPosthog();
         });
+
+        // Initialize resources on page load
+        updateResources();
       });
     </script>
 

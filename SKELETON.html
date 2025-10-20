@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<style>
+* {
+	padding: 0;
+	margin: 0;
+}
+
+.container {
+	padding: 40px;
+}
+
+.centered {
+	text-align: center;
+}
+
+.grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+
+.grid-3 {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+}
+
+.grid-2 {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 30px;
+}
+
+.grid-3 {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+}
+
+.grid-4 {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.v-flex {
+	display: flex;
+	flex-direction: vertical;
+}
+
+#survey {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	background: white;
+	padding: 20px;
+}
+
+#preopening {
+	padding-bottom: 30px;
+}
+
+#opening {
+	min-height: 200px;
+	padding-bottom: 50px;
+}
+
+#do-more-with-stylus {
+	margin: auto 0;
+}
+
+#testimonial {
+	min-height: 100px;
+	padding-bottom: 20px;
+}
+
+#lang-select {
+	padding-right: 5px;
+	margin: auto 0;
+}
+		</style>
+	</head>
+	<body>
+		<div id="survey">
+			<h4>What do you want to accomplish with Stylus?</h4>
+			<ul>
+				<li>Cheaper contracts</li>
+				<li>Cryptography</li>
+			</ul>
+		</div>
+		<div class="container">
+			<section id="opening" class="grid">
+				<div id="do-more-with-stylus">
+					<h1 class="centered">Do more, with Stylus.</h1>
+					<br />
+					<h3 class="centered">Build with Rust, AssemblyScript, Move, and Zig, on any Arbitrum chain.</h3>
+				</div>
+				<div>
+					<h2>Try online</h2>
+					<br />
+					<div class="v-flex">
+						<div id="lang-select">
+							<div><h3>Rust</h3></div>
+							<div><h3>AssemblyScript</h3></div>
+							<div><h3>Move</h3></div>
+							<div><h3>Zig</h3></div>
+						</div>
+						<pre>
+#[storage]
+#[entrypoint]
+struct Counter {
+    counter: StorageU256
+}
+
+#[public]
+impl Counter {
+    pub fn counter(&mut self) -> U256 {
+        self.counter.set(self.counter.get() + U256::from(1));
+        self.counter.get()
+    }
+}
+						</pre>
+					</div>
+					<button>Try online</button>
+				</div>
+			</section>
+			<section id="info-grid" class="grid-2">
+				<div>
+					<h1 class="centered">Learn with Stylus</h1>
+					<div class="grid-3">
+						<div>
+							<h2>Education platforms</h2>
+						</div>
+						<div>
+							<h2>Tutorials</h2>
+						</div>
+						<div>
+							<h2>Books</h2>
+						</div>
+					</div>
+				</div>
+				<div>
+					<h1 class="centered">Build with Stylus</h1>
+					<div class="grid-4">
+						<div>
+							<h2>Editors</h2>
+						</div>
+						<div>
+							<h2>Debuggers</h2>
+						</div>
+						<div>
+							<h2>Auditors</h2>
+						</div>
+						<div>
+							<h2>Auditors</h2>
+						</div>
+					</div>
+				</div>
+				<div>
+					<h1 class="centered">Projects built with Stylus</h1>
+					<div class="grid-3">
+						<div>
+							<h2>Defi</h2>
+						</div>
+						<div>
+							<h2>Gaming</h2>
+						</div>
+						<div>
+							<h2>Auditors</h2>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+	</body>
+</html>

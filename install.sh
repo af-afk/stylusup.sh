@@ -23,10 +23,8 @@ os="$(uname -s)"
 arch="$(uname -m)"
 lang="${LANG%%_*}"
 
-NC=$'\033[0m'; BLUE=$'\033[1;34m'; RED=$'\033[1;31m'; GREEN=$'\033[1;32m'
-
-log() { >&2 printf "${BLUE}ℹ️  %s${NC}\n"  "$*"; }
-die() { >&2 printf "${RED}❌ %s${NC}\n"  "$*"; exit 1; }
+log() { >&2 echo "$*" }
+die() { >&2 echo "$*; exit 1 }
 
 if ! which curl >/dev/null; then
 	die "curl is needed for installation. You can install it with your package manager."
@@ -81,14 +79,14 @@ if ! cargo stylus 2>&1 >/dev/null; then
 fi
 
 >&2 cat <<EOF
-${GREEN}🎉  Congratulations!!! You're ready to develop with Stylus!
+Congratulations!!! You're ready to develop with Stylus!
 
-💡  Use "cargo stylus new" to get started with your first project:
+Use "cargo stylus new" to get started with your first project:
 
-------------------------------------------------------------------${NC}
+------------------------------------------------------------------
 
 . \$HOME/.cargo/env
 
-cargo stylus new hello-world${NC}
+cargo stylus new hello-world
 
 EOF
