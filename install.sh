@@ -23,8 +23,13 @@ os="$(uname -s)"
 arch="$(uname -m)"
 lang="${LANG%%_*}"
 
-log() { >&2 echo "$*" }
-die() { >&2 echo "$*; exit 1 }
+log() {
+	>&2 echo "$*"
+}
+die() {
+	>&2 echo "$*"
+	exit 1
+}
 
 if ! which curl >/dev/null; then
 	die "curl is needed for installation. You can install it with your package manager."
